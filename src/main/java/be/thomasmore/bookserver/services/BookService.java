@@ -33,9 +33,7 @@ public class BookService {
     private AuthorDTOConverter authorDTOConverter;
 
     public List<BookDTO> findAll(String titleKeyWord) {
-        final List<Book> books = titleKeyWord == null ?
-                bookRepository.findAll() :
-                bookRepository.findByTitleContainingIgnoreCase(titleKeyWord);
+        final List<Book> books = titleKeyWord == null ? bookRepository.findAll() : bookRepository.findByTitleContainingIgnoreCase(titleKeyWord);
 
         return books.stream()
                 .map(b -> bookDTOConverter.convertToDto(b))

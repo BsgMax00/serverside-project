@@ -31,8 +31,8 @@ public class SerieController {
         return serieService.findAll();
     }
 
-    @Operation(summary = "get 1 author from the database.",
-            description = "Author with id is fetched from database - returns detailed info. ")
+    @Operation(summary = "get 1 serie from the database.",
+            description = "serie with id is fetched from database - returns detailed info. ")
     @GetMapping("{id}")
     public SerieDetailedDTO findOne(@PathVariable int id) {
         log.info(String.format("##### findOne author %d", id));

@@ -33,7 +33,6 @@ public class Book {
     //todo: clean up (with flyway)
     private String author = ""; //this is not normalized but I don't care for this example
 
-    private String serie="";
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Author> authors;

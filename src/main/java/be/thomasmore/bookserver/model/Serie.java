@@ -19,8 +19,7 @@ public class Serie {
 
     private String name;
 
-    @ManyToMany(mappedBy = "serie", fetch = FetchType.LAZY)
-    private Set<Book> books;
+
 
     public Serie(int id) {
         this.id = id;

@@ -23,10 +23,13 @@ public class BookControllerGetAllBooksTest extends AbstractIntegrationTest {
                 .andExpect(jsonPath("$[0].title").value("Test Automation"))
                 .andExpect(jsonPath("$[0].authors").exists())
                 .andExpect(jsonPath("$[0].authors").isEmpty())
+                .andExpect(jsonPath("$[0].serie").exists())
                 .andExpect(jsonPath("$[1].id").value(2))
                 .andExpect(jsonPath("$[1].title").value("REST API Automation Testing from Scratch"))
                 .andExpect(jsonPath("$[1].authors").exists())
-                .andExpect(jsonPath("$[1].authors").isEmpty());
+                .andExpect(jsonPath("$[1].authors").isEmpty())
+                .andExpect(jsonPath("$[0].serie").exists());
+
     }
 
     @Test

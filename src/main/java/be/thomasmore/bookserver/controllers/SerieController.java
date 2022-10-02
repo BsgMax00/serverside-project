@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/api/serie")
+@RequestMapping("/api/series")
 @Slf4j
 public class SerieController {
 
@@ -31,11 +31,11 @@ public class SerieController {
         return serieService.findAll();
     }
 
-    @Operation(summary = "get 1 author from the database.",
-            description = "Author with id is fetched from database - returns detailed info. ")
+    @Operation(summary = "get 1 serie from the database.",
+            description = "Serie with id is fetched from database - returns detailed info. ")
     @GetMapping("{id}")
     public SerieDetailedDTO findOne(@PathVariable int id) {
-        log.info(String.format("##### findOne author %d", id));
+        log.info(String.format("##### findOne serie %d", id));
         return serieService.findOne(id);
     }
 }

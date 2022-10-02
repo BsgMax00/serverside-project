@@ -16,6 +16,14 @@ values (nextval('BOOK_SEQ'), 'De opwindvogelkronieken');/*5*/
 insert into BOOK (ID, TITLE)
 values (nextval('BOOK_SEQ'), 'Design Patterns');/*6*/
 
+insert into SERIE (ID, NAME)
+values (nextval('SERIE_SEQ'), 'Programming series');/*1*/
+
+insert into SERIE (ID, NAME)
+values (nextval('SERIE_SEQ'), 'Anderland');/*2*/
+
+
+
 
 insert into AUTHOR (ID, NAME)
 values (nextval('AUTHOR_SEQ'), 'Margaret Atwood'); /*1*/

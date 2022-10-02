@@ -5,19 +5,27 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.Set;
 @NoArgsConstructor
 @Data
+@EqualsAndHashCode(exclude = {"books"})
+@ToString(exclude = {"books"})
 @Entity
 public class Serie {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "genre_generator")
-    @SequenceGenerator(name = "genre_generator", sequenceName = "genre_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "serie_generator")
+    @SequenceGenerator(name = "serie_generator", sequenceName = "serie_seq", allocationSize = 1)
     @Id
-    int id;
-    @NotBlank(message="Genre name should not be blank") @NotNull
-    String name;
+    private int id;
+
+    private String name;
+
+
+
+    public Serie(int id) {
+        this.id = id;
+    }
+
+
 
 
 }

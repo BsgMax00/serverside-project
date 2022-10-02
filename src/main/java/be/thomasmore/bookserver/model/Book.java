@@ -34,6 +34,8 @@ public class Book {
     private String author = ""; //this is not normalized but I don't care for this example
 
 
+
+
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Author> authors;
 }

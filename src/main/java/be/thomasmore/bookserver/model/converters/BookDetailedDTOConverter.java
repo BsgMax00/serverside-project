@@ -15,8 +15,6 @@ public class BookDetailedDTOConverter {
 
     @Autowired
     private ModelMapper modelMapper;
-    @Autowired
-    private AuthorDTOConverter authorDTOConverter;
 
     /**
      * @param book the entity from the db

@@ -1,13 +1,10 @@
 package be.thomasmore.bookserver.services;
 
 import be.thomasmore.bookserver.model.Author;
-import be.thomasmore.bookserver.model.Book;
 import be.thomasmore.bookserver.model.converters.AuthorDTOConverter;
 import be.thomasmore.bookserver.model.converters.AuthorDetailedDTOConverter;
-import be.thomasmore.bookserver.model.converters.BookDetailedDTOConverter;
 import be.thomasmore.bookserver.model.dto.AuthorDTO;
 import be.thomasmore.bookserver.model.dto.AuthorDetailedDTO;
-import be.thomasmore.bookserver.model.dto.BookDetailedDTO;
 import be.thomasmore.bookserver.repositories.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,10 +1,8 @@
 package be.thomasmore.bookserver.services;
 
-import be.thomasmore.bookserver.model.Author;
 import be.thomasmore.bookserver.model.Serie;
 import be.thomasmore.bookserver.model.converters.SerieDTOConverter;
 import be.thomasmore.bookserver.model.converters.SerieDetailedDTOConverter;
-import be.thomasmore.bookserver.model.dto.AuthorDetailedDTO;
 import be.thomasmore.bookserver.model.dto.SerieDTO;
 import be.thomasmore.bookserver.model.dto.SerieDetailedDTO;
 import be.thomasmore.bookserver.repositories.SerieRepository;

@@ -1,11 +1,11 @@
 package be.thomasmore.bookserver.controllers;
 
-import be.thomasmore.bookserver.model.converters.SerieDetailedDTOConverter;
-import be.thomasmore.bookserver.model.dto.AuthorDTO;
-import be.thomasmore.bookserver.model.dto.AuthorDetailedDTO;
 import be.thomasmore.bookserver.model.dto.SerieDTO;
 import be.thomasmore.bookserver.model.dto.SerieDetailedDTO;
-import be.thomasmore.bookserver.services.AuthorService;
+
+
+
+
 import be.thomasmore.bookserver.services.SerieService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.extern.slf4j.Slf4j;

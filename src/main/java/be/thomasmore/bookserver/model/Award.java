@@ -9,12 +9,16 @@ import javax.persistence.*;
 @Data
 @Entity
 public class Award {
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "Award_generator")
-    @SequenceGenerator(name = "Award_generator", sequenceName = "Award_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "award_generator")
+    @SequenceGenerator(name = "award_generator", sequenceName = "award_seq", allocationSize = 1)
     @Id
     private int id;
 
     private String title;
 
     private String info;
+
+    public Award(int id){
+        this.id = id;
+    }
 }

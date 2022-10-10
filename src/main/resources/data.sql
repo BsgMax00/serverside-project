@@ -1,11 +1,11 @@
 insert into BOOK (ID, TITLE)
-values (nextval('BOOK_SEQ'), 'Oryx and Crake'); /*1*/
+values (nextval('BOOK_SEQ')); /*1*/
 
 insert into BOOK (ID, TITLE)
-values (nextval('BOOK_SEQ'), 'The year of the flood');/*2*/
+values (nextval('BOOK_SEQ'));/*2*/
 
 insert into BOOK (ID, TITLE)
-values (nextval('BOOK_SEQ'), 'MaddAddam');/*3*/
+values (nextval('BOOK_SEQ'));/*3*/
 
 insert into BOOK (ID, TITLE)
 values (nextval('BOOK_SEQ'), '1Q84');/*4*/

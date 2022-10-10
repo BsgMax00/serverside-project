@@ -21,6 +21,10 @@ public class Author {
 
     private String name;
 
+    private String description;
+
+    private String Country;
+
     @ManyToMany(mappedBy = "authors", fetch = FetchType.LAZY)
     private Set<Book> books;
 

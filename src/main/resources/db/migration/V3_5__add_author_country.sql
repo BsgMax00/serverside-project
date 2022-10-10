@@ -1,0 +1,1 @@
+alter table author add country varchar(255)

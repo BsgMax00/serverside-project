@@ -12,8 +12,8 @@ import java.util.List;
 @AllArgsConstructor
 @Builder
 @Data
-@EqualsAndHashCode(exclude = {"authors"})
-@ToString(exclude = {"authors"})
+@EqualsAndHashCode(exclude = {"authors", "awards"})
+@ToString(exclude = {"authors", "awards"})
 @Entity
 public class Book {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "book_generator")
@@ -29,5 +29,8 @@ public class Book {
 
     @ManyToMany(fetch = FetchType.LAZY)
     private List<Author> authors;
+
+    @ManyToMany(fetch = FetchType.LAZY)
+    private List<Award> awards;
 }
 

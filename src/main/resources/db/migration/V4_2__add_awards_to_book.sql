@@ -1,0 +1,1 @@
+alter table book add award award;

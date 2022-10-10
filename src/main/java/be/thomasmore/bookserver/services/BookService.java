@@ -3,9 +3,11 @@ package be.thomasmore.bookserver.services;
 import be.thomasmore.bookserver.model.Author;
 import be.thomasmore.bookserver.model.Book;
 import be.thomasmore.bookserver.model.converters.AuthorDTOConverter;
+import be.thomasmore.bookserver.model.converters.AwardDTOConverter;
 import be.thomasmore.bookserver.model.converters.BookDTOConverter;
 import be.thomasmore.bookserver.model.converters.BookDetailedDTOConverter;
 import be.thomasmore.bookserver.model.dto.AuthorDTO;
+import be.thomasmore.bookserver.model.dto.AwardDTO;
 import be.thomasmore.bookserver.model.dto.BookDTO;
 import be.thomasmore.bookserver.model.dto.BookDetailedDTO;
 import be.thomasmore.bookserver.repositories.BookRepository;
@@ -31,6 +33,8 @@ public class BookService {
     private BookDetailedDTOConverter bookDetailedDTOConverter;
     @Autowired
     private AuthorDTOConverter authorDTOConverter;
+    @Autowired
+    private AwardDTOConverter awardDTOConverter;
 
     public List<BookDTO> findAll(String titleKeyWord) {
         final List<Book> books = titleKeyWord == null ? bookRepository.findAll() : bookRepository.findByTitleContainingIgnoreCase(titleKeyWord);
@@ -57,6 +61,17 @@ public class BookService {
 
         return bookFromDb.get().getAuthors().stream()
                 .map(a -> authorDTOConverter.convertToDto(a))
+                .collect(Collectors.toList());
+    }
+
+    public List<AwardDTO> awardsForBook(int bookId) {
+        Optional<Book> bookFromDb = bookRepository.findById(bookId);
+        if (bookFromDb.isEmpty())
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,
+                    String.format("Book with id %d not found.", bookId));
+
+        return bookFromDb.get().getAwards().stream()
+                .map(a -> awardDTOConverter.convertToDto(a))
                 .collect(Collectors.toList());
     }
 

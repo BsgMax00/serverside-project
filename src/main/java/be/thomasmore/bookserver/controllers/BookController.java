@@ -1,6 +1,7 @@
 package be.thomasmore.bookserver.controllers;
 
 import be.thomasmore.bookserver.model.dto.AuthorDTO;
+import be.thomasmore.bookserver.model.dto.AwardDTO;
 import be.thomasmore.bookserver.model.dto.BookDTO;
 import be.thomasmore.bookserver.model.dto.BookDetailedDTO;
 import be.thomasmore.bookserver.services.BookService;
@@ -89,6 +90,15 @@ public class BookController {
     public void delete(@PathVariable int id) {
         log.info(String.format("##### delete book %d", id));
         bookService.delete(id);
+    }
+
+    @Operation(summary = "find the awards for the given book. ",
+            description = "Returns awards collection that contains only id and name. </br>" +
+                    "Use GET api/awards/{id}/authors to fetch more info about the authors. ")
+    @GetMapping("{id}/awards")
+    public Iterable<AwardDTO> awardsForBook(@PathVariable int id) {
+        log.info(String.format("##### get awards for book with id %d", id));
+        return bookService.awardsForBook(id);
     }
 
 }

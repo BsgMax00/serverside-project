@@ -35,6 +35,12 @@ public abstract class AbstractIntegrationTest {
                 .contentType(MediaType.APPLICATION_JSON);
     }
 
+    protected MockHttpServletRequestBuilder getMockRequestGetAwards(String url) {
+        return MockMvcRequestBuilders
+                .get(url)
+                .contentType(MediaType.APPLICATION_JSON);
+    }
+
     protected MockHttpServletRequestBuilder getMockRequestPostBooks(BookDetailedDTO NEW_BOOK_DTO) throws JsonProcessingException {
         return MockMvcRequestBuilders.post("/api/books/")
                 .with(csrf())
